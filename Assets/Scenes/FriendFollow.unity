@@ -243,8 +243,12 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &203315293
 >>>>>>> 208e2c3ae93a956b3c54b2da3de614610de94bde
+=======
+--- !u!1001 &203315293
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
 --- !u!1001 &203315293
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
@@ -255,6 +259,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -281,6 +286,8 @@ PrefabInstance:
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
+=======
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
     m_TransformParent: {fileID: 28639485}
     m_Modifications:
     - target: {fileID: 7546491459589818820, guid: ca9d843e54129304097560a6db07bda4,
@@ -301,7 +308,10 @@ PrefabInstance:
     - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 208e2c3ae93a956b3c54b2da3de614610de94bde
+=======
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
@@ -313,6 +323,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 363882053669341571, guid: 18c29ee327b1fc548a433ea5c257af93,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -334,6 +345,8 @@ PrefabInstance:
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
+=======
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
     - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -350,9 +363,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 208e2c3ae93a956b3c54b2da3de614610de94bde
+=======
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
@@ -364,10 +380,14 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 363882053669341571, guid: 18c29ee327b1fc548a433ea5c257af93,
 =======
     - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
 >>>>>>> 208e2c3ae93a956b3c54b2da3de614610de94bde
+=======
+    - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
     - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
@@ -381,6 +401,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 363882053669341571, guid: 18c29ee327b1fc548a433ea5c257af93,
 =======
     - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
@@ -391,10 +412,14 @@ PrefabInstance:
 =======
     - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
+=======
+    - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -508,11 +533,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 363882053669341571, guid: 18c29ee327b1fc548a433ea5c257af93,
+=======
+    - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 363882053669341571, guid: 18c29ee327b1fc548a433ea5c257af93,
+=======
+    - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
     - target: {fileID: 7546491459589818821, guid: ca9d843e54129304097560a6db07bda4,
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
@@ -521,9 +553,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c29ee327b1fc548a433ea5c257af93, type: 3}
 =======
+=======
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
@@ -588,9 +623,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 208e2c3ae93a956b3c54b2da3de614610de94bde
 =======
 >>>>>>> 6051cb15ff0cd6eb3aecb0282b0bf67fbaa1425a
+=======
+>>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======
 >>>>>>> parent of 6051cb1... Calendar: Number of days pops up in UI
 =======

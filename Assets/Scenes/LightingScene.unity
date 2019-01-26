@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 1765307315}
   - component: {fileID: 1765307314}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +318,7 @@ PrefabInstance:
     - target: {fileID: 363882053669341575, guid: 18c29ee327b1fc548a433ea5c257af93,
         type: 3}
       propertyPath: m_Name
-      value: torch
+      value: Torch
       objectReference: {fileID: 0}
     - target: {fileID: 363882053669341571, guid: 18c29ee327b1fc548a433ea5c257af93,
         type: 3}

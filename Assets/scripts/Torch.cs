@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Torch : MonoBehaviour
 {
-   public Light lightToDim = null;    
+   public Light lightToDim = null;   
+   public bool party = false; 
    public float maxTime = 300; //30 seconds
    public float intensity = 10;
    private float mEndTime = 0;
    private float mStartTime = 0;
    private void Start()
    {
-     GetTotalTorches();
+    //  GetTotalTorches();
      lightToDim.intensity = intensity;
      mStartTime = Time.time;
-     mEndTime= mStartTime + maxTime;
+     if(party) {
+      mEndTime= GetPartyTorcheTime();
+     } else {
+       mEndTime = mStartTime + maxTime;
+     }
    }
    private void Update()
    {
@@ -30,23 +35,15 @@ public class Torch : MonoBehaviour
        
    }
 
-  private float GetPartyTorches() {
-    GameObject party = GameObject.Find("party");
+  private float GetPartyTorcheTime() {
+    GameObject party = GameObject.Find("Party");
     float time = 0;
     foreach (Transform child in party.transform) {
-      time = time + child.mEndTime;
+      foreach (Transform party_child in child.transform) {
+        Torch torch_time = party_child.gameObject.GetComponent(typeof(Torch)) as Torch;
+        time = time + torch_time.mEndTime;
+      }
     }
     return time;
   }
-
-   private float GetTotalTorches() {
-      GameObject[] torches = FindGameObjectsWithTag("torch");
-      float time = 0;;
-      // float intensity;
-      foreach (GameObject element in torches) {
-        time = time + element.mEndTime;
-        // intensity = intensity + object.intensity;
-      }
-      return time;
-   }
 }

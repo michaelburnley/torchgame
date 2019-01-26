@@ -28,4 +28,16 @@ public class Torch : MonoBehaviour
    private void OnTriggerEnter(Collider other) {
        
    }
+
+   private float GetTotalTorches() {
+      GameObject[] torches;
+      float time;
+      // float intensity;
+      torches = FindGameObjectsWithTag("torch");
+      forEach(int element in torches) {
+        time = time + element.mEndTime;
+        // intensity = intensity + element.intensity;
+      }
+      return time;
+   }
 }

@@ -32,9 +32,9 @@ public class Player : MonoBehaviour
     }
 
     void ChangeDirection() {
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) {
+        if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && gridOrientation == Orientation.Horizontal) {
             gridOrientation = Orientation.Vertical;
-        } else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) {
+        } else if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) && gridOrientation == Orientation.Vertical) {
             gridOrientation = Orientation.Horizontal;
         }
     }
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (!isMoving) {
-            ChangeDirection();
+            
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (!allowDiagonals) {
                 if (Mathf.Abs(input.x) > Mathf.Abs(input.y)) {
@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
             }
  
             if (input != Vector2.zero) {
+                ChangeDirection();
                 StartCoroutine(move(transform));
             }
         }

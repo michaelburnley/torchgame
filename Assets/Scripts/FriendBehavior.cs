@@ -42,6 +42,8 @@ public class FriendBehavior : MonoBehaviour
     {
         if(collision.tag =="Player")
         {
+            Transform mytorch = transform.GetChild(0);
+            mytorch.gameObject.GetComponent<Torch>().inParty = true;
             transform.SetParent(Party.transform);
             okToFollow = true;
             

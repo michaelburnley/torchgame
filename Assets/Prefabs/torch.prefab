@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightToDim: {fileID: 363882054391884835}
+  party: 0
   maxTime: 30
   intensity: 10
 --- !u!1 &363882054391884832
@@ -149,9 +150,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8.21
-  m_Range: 10
+  m_Color: {r: 0.9339623, g: 0.92354655, b: 0.15419187, a: 1}
+  m_Intensity: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:

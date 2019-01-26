@@ -12,7 +12,6 @@ public class FriendBehavior : MonoBehaviour
     public float maxDistance;
     
     public bool okToFollow;
-    private bool following;
    
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,10 @@ public class FriendBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
+        Vector3 dir = player.transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
         if (okToFollow)
         {
             Transform friendToFollow = transform.parent.transform.GetChild(transform.GetSiblingIndex() - 1);
@@ -45,6 +47,7 @@ public class FriendBehavior : MonoBehaviour
             transform.SetParent(Party.transform);
             okToFollow = true;
             
+
             
         }
     }

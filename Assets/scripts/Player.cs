@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    enum Direction { Up, Down, Left, Right };
-    private Direction movementDirection;
     private Rigidbody rb;
-    private bool isgrounded;
     public float moveSpeed = 3f;
     public float gridSize = 1f;
     private enum Orientation {

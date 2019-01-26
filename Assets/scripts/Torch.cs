@@ -5,11 +5,13 @@ using UnityEngine;
 public class Torch : MonoBehaviour
 {
    public Light lightToDim = null;    
-   public float maxTime = 30; //30 seconds
+   public float maxTime = 300; //30 seconds
+   public float intensity = 10;
    private float mEndTime = 0;
-   public float mStartTime = 30;
-   private void Awake()
+   private float mStartTime = 0;
+   private void Start()
    {
+     lightToDim.intensity = intensity;
      mStartTime = Time.time;
      mEndTime= mStartTime + maxTime;
    }
@@ -19,7 +21,11 @@ public class Torch : MonoBehaviour
        lightToDim.intensity = lightToDim.intensity - Mathf.InverseLerp(mStartTime, mEndTime, Time.time);
    }
 
-   private void AddTime() {
+   private void AddTime(float additionalTime) {
+       mEndTime = mEndTime + additionalTime;
+   }
+
+   private void OnTriggerEnter(Collider other) {
        
    }
 }

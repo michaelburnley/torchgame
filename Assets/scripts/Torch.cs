@@ -11,6 +11,7 @@ public class Torch : MonoBehaviour
    private float mStartTime = 0;
    private void Start()
    {
+     GetTotalTorches();
      lightToDim.intensity = intensity;
      mStartTime = Time.time;
      mEndTime= mStartTime + maxTime;
@@ -29,14 +30,22 @@ public class Torch : MonoBehaviour
        
    }
 
+  private float GetPartyTorches() {
+    GameObject party = GameObject.Find("party");
+    float time = 0;
+    foreach (Transform child in party.transform) {
+      time = time + child.mEndTime;
+    }
+    return time;
+  }
+
    private float GetTotalTorches() {
-      GameObject[] torches;
-      float time;
+      GameObject[] torches = FindGameObjectsWithTag("torch");
+      float time = 0;;
       // float intensity;
-      torches = FindGameObjectsWithTag("torch");
-      forEach(int element in torches) {
+      foreach (GameObject element in torches) {
         time = time + element.mEndTime;
-        // intensity = intensity + element.intensity;
+        // intensity = intensity + object.intensity;
       }
       return time;
    }

@@ -12,19 +12,17 @@ public class Calendar : MonoBehaviour
     public Image resource;
     public Text dayNum;
 
-    private GameObject Home;
-
     // Start is called before the first frame update
     void Start()
     {
         Vector3 pos = new Vector3(35f, 733f, 0f);
         float updateX = pos.x;
 
-        for (int i = 1; i <= numOfDays; i++)
+        for (int i = 0; i <= numOfDays; i++)
         {                    
             if (i%8 == 0)
             {
-                pos.y -= 70f;
+                pos.y -= 100f;
                 pos.x = 35f;
             }
             
@@ -32,7 +30,7 @@ public class Calendar : MonoBehaviour
             Day.transform.SetParent(canvas.transform);
             Day.GetComponentInChildren<Text>().text = i.ToString();
 
-            pos = new Vector3(pos.x + 70f, pos.y, 0f);
+            pos.x =+ 70f;
         }
     }
 

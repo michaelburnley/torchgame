@@ -6,7 +6,7 @@ public class FriendBehavior : MonoBehaviour
 {
     Rigidbody2D rb;
     public GameObject player;
-    public GameObject[] friends;
+    public GameObject Party;
     public bool orderInLine;
     public float step;//Set = to players speed;
     public float maxDistance;
@@ -19,47 +19,32 @@ public class FriendBehavior : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-        okToFollow = true;
+               
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(okToFollow)
+   
+        if (okToFollow)
         {
-            Transform friendToFollow;
-            if (transform.GetSiblingIndex() == 0)
-            {
-                friendToFollow = player.transform;
-            }
-            else
-            {
-                friendToFollow = player.transform.GetChild(transform.GetSiblingIndex() - 1);
-            }
+            Transform friendToFollow = transform.parent.transform.GetChild(transform.GetSiblingIndex() - 1);
             
             if (Vector2.Distance(transform.position, friendToFollow.position) >= maxDistance)
             {
-                following = true;               
-            }
-            else
-            {
-                following = false;
-            }
-
-            if(following)
-            {
                 transform.position = Vector3.MoveTowards(transform.position, friendToFollow.position, step);
             }
-            
+
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name =="Player")
+        if(collision.tag =="Player")
         {
-            transform.SetParent(collision.transform);
+            transform.SetParent(Party.transform);
             okToFollow = true;
+            
             
         }
     }

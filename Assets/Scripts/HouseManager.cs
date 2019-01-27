@@ -8,6 +8,7 @@ public class HouseManager : MonoBehaviour
     public GameObject party;
     public GameObject plrSpawnPoint;
     public int Days;
+    public float fadeWaitTime;
     private int completed_days = 0;
     private int currentDay = 1;
     private float torch_level;
@@ -21,7 +22,8 @@ public class HouseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i<=Days; i++)
+        FadeLevelChange.fadeIn = true;
+        for (int i = 0; i<=Days; i++)
         {
             daySheets = GameObject.FindGameObjectsWithTag("Calendar");
         }
@@ -30,7 +32,7 @@ public class HouseManager : MonoBehaviour
         player_torch = player.transform.GetChild(0).gameObject;
        // calendar = GetComponent<Calendar>();
         GetComponent<Calendar>().numOfDays = Days;
-        Debug.Log("Game Start");
+        Debug.Log("Game Start");       
         
     }
 
@@ -73,16 +75,33 @@ public class HouseManager : MonoBehaviour
 
     void EndDay()
     {
+        player.GetComponent<Player>().enabled = false;
         if(player.GetComponent<Player>().gas_cans == 0) {
+            FadeLevelChange.level = "GameOver";
+            FadeLevelChange.fadeOutEnd = true;           
             GameOver();
-        } else {
-            completed_days += player.GetComponent<Player>().gas_cans;
-            party.transform.position = transform.position;
-            updateCalendar();
         }
+        if (completed_days >= Days)
+        {
+            FadeLevelChange.level = "WinScreen";
+            FadeLevelChange.fadeOutEnd = true;
 
-        //fade out
-        //deactivate script
+        }
+        else {
+            FadeLevelChange.fadeOut = true;
+            completed_days += player.GetComponent<Player>().gas_cans;
+            StartCoroutine(Fade());            
+        }
+                
+    }
+
+    public IEnumerator Fade()
+    {
+        yield return new WaitForSeconds(fadeWaitTime);
+        party.transform.position = transform.position;
+        updateCalendar();
+        FadeLevelChange.fadeIn = true;
+        player.GetComponent<Player>().enabled = true;
     }
 
 

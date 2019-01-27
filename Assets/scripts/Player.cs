@@ -11,19 +11,21 @@ public class Player : MonoBehaviour
         Horizontal,
         Vertical
     };
-    private Orientation gridOrientation = Orientation.Vertical;
+    private Orientation gridOrientation;
     public bool allowDiagonals = false;
     private bool correctDiagonalSpeed = true;
     private Vector2 input;
     private bool isMoving = false;
-    private Vector3 startPosition;
-    private Vector3 endPosition;
+    private Vector2 startPosition;
+    private Vector2 endPosition;
     private float t;
     private float factor;
+    public int gas_cans;
 
     // Start is called before the first frame update
     void Start()
     {
+        gridOrientation = Orientation.Vertical;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -42,8 +44,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isMoving) {
-            
+        Rotation();
+        ChangeDirection();
+        if (!isMoving) {   
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (!allowDiagonals) {
                 if (Mathf.Abs(input.x) > Mathf.Abs(input.y)) {
@@ -54,10 +57,11 @@ public class Player : MonoBehaviour
             }
  
             if (input != Vector2.zero) {
-                ChangeDirection();
+                
                 StartCoroutine(move(transform));
             }
         }
+                
     }
 
     public IEnumerator move(Transform transform) {
@@ -66,11 +70,11 @@ public class Player : MonoBehaviour
         t = 0;
  
         if(gridOrientation == Orientation.Horizontal) {
-            endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize,
-                startPosition.y, startPosition.z + System.Math.Sign(input.y) * gridSize);
+            endPosition = new Vector2(startPosition.x + System.Math.Sign(input.x) * gridSize,
+                startPosition.y + System.Math.Sign(input.y) * gridSize);
         } else {
-            endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize,
-                startPosition.y + System.Math.Sign(input.y) * gridSize, startPosition.z);
+            endPosition = new Vector2(startPosition.x + System.Math.Sign(input.x) * gridSize,
+                startPosition.y + System.Math.Sign(input.y) * gridSize);
         }
  
         if(allowDiagonals && correctDiagonalSpeed && input.x != 0 && input.y != 0) {
@@ -81,11 +85,38 @@ public class Player : MonoBehaviour
  
         while (t < 1f) {
             t += Time.deltaTime * (moveSpeed/gridSize) * factor;
-            transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            transform.position = Vector2.Lerp(startPosition, endPosition, t);
             yield return null;
         }
  
         isMoving = false;
         yield return 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.tag == "Gas") {
+            Destroy(collision.gameObject);         
+            gas_cans += 1;
+        }
+    }
+    
+    void Rotation()
+    {
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.rotation = Quaternion.Euler(0f,0f,90f);
+        }
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.rotation = Quaternion.Euler(0f,0f,-90f);
+        }
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.rotation = Quaternion.Euler(0f,0f,0f);
+        }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.rotation = Quaternion.Euler(0f,180f,0f);
+        }
     }
 }

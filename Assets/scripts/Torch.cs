@@ -7,6 +7,7 @@ public class Torch : MonoBehaviour
    public Light lightToDim = null;   
    public bool inParty = false; 
    private GameObject party;
+   private GameObject player;
    public int nextPartyCount;
    public int prevPartyCount;
    public float maxTime = 300; //30 seconds
@@ -16,6 +17,7 @@ public class Torch : MonoBehaviour
 
    private void Awake() {
      party = GameObject.Find("Party");
+     player = GameObject.Find("Player");
      nextPartyCount = party.transform.childCount;
      prevPartyCount = party.transform.childCount;
    }
@@ -37,19 +39,19 @@ public class Torch : MonoBehaviour
      nextPartyCount = party.transform.childCount;
 
      if(nextPartyCount > prevPartyCount) {
-      //  mEndTime = GetPartyTorchTime() / nextPartyCount;
+      
        mEndTime = mEndTime + (mEndTime * nextPartyCount);
-       lightToDim.intensity = intensity;
+       foreach(Transform party_member in party.transform)
+            {
+                party_member.GetChild(0).GetComponent<Torch>().lightToDim.intensity = intensity;
+            }
+       lightToDim.intensity = player.transform.GetChild(0).GetComponent<Torch>().intensity;
        prevPartyCount = nextPartyCount;
      }
    }
 
    private void AddTime(float additionalTime) {
        mEndTime = mEndTime + additionalTime;
-   }
-
-   private void OnTriggerEnter(Collider other) {
-       
    }
 
   private float GetPartyTorchTime() {

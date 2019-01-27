@@ -9,15 +9,16 @@ public class FriendBehavior : MonoBehaviour
     public GameObject Party;
     public bool orderInLine;
     public float step;//Set = to players speed;
-    public float maxDistance;
-    
+    public float maxDistance;    
     public bool okToFollow;
+
    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        Party = GameObject.Find("Party");
                
     }
 
@@ -34,7 +35,7 @@ public class FriendBehavior : MonoBehaviour
             
             if (Vector2.Distance(transform.position, friendToFollow.position) >= maxDistance)
             {
-                transform.position = Vector3.MoveTowards(transform.position, friendToFollow.position, step);
+                transform.position = Vector2.MoveTowards(transform.position, friendToFollow.position, step);
             }
 
         }

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 363882053669341571}
   - component: {fileID: 363882053669341568}
   - component: {fileID: 363882053669341569}
+  - component: {fileID: 1844796745913541015}
   - component: {fileID: 363882053669341574}
-  - component: {fileID: 363882053669341570}
   m_Layer: 0
   m_Name: torch
   m_TagString: Untagged
@@ -80,6 +80,24 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1844796745913541015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363882053669341575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc39259d4be13a488764d7125a519a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightToDim: {fileID: 363882054391884835}
+  inParty: 0
+  nextPartyCount: 0
+  prevPartyCount: 0
+  maxTime: 300
+  intensity: 10
 --- !u!65 &363882053669341574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93,22 +111,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &363882053669341570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363882053669341575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122f1e52c73e87545ab3b4be78b8c122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightToDim: {fileID: 363882054391884835}
-  party: 0
-  maxTime: 30
-  intensity: 10
 --- !u!1 &363882054391884832
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,8 +32,8 @@ public class HouseManager : MonoBehaviour
         player_torch = player.transform.GetChild(0).gameObject;
        // calendar = GetComponent<Calendar>();
         GetComponent<Calendar>().numOfDays = Days;
-        Debug.Log("Game Start");       
-        
+        Debug.Log("Game Start");
+       
     }
 
     // Update is called once per frame

@@ -12,7 +12,7 @@ public class Torch : MonoBehaviour
    public int prevPartyCount;
    public float maxTime = 300; //30 seconds
    public float intensity = 10;
-   private float mEndTime = 30;
+   public float mEndTime = 30;
    private float mStartTime = 0;
 
    private void Awake() {
@@ -56,7 +56,6 @@ public class Torch : MonoBehaviour
 
   private float GetPartyTorchTime() {
     float time = 0;
-    int runtimes = 0;
     foreach (Transform child in party.transform) {
       foreach (Transform party_child in child.transform) {
         Torch torch_time = party_child.gameObject.GetComponent<Torch>();

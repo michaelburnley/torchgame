@@ -49,8 +49,9 @@ MonoBehaviour:
   inParty: 0
   nextPartyCount: 0
   prevPartyCount: 0
-  maxTime: 300
+  maxTime: 3000
   intensity: 10
+  mEndTime: 500
 --- !u!212 &6045312167554823695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 51239c59250a3384c91451b33f508ad8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -140,10 +141,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0.9339623, g: 0.92354655, b: 0.15419187, a: 1}
-  m_Intensity: 10
-  m_Range: 15
-  m_SpotAngle: 30
+  m_Color: {r: 1, g: 0.9967289, b: 0.6745283, a: 0.5254902}
+  m_Intensity: 3.66
+  m_Range: 11
+  m_SpotAngle: 86
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0

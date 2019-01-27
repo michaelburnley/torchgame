@@ -31,11 +31,12 @@ public class FadeLevelChange : MonoBehaviour {
         {
             anim.SetBool("FadeOut", true);
             anim.SetBool("FadeIn", false);
+         
         }
         if(fadeOutEnd == true)
         {
             anim.SetBool("FadeOut", true);
-
+            anim.SetBool("FadeIn", false);
             StartCoroutine(LoadLevel());
         }
 		

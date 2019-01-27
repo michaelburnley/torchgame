@@ -22,6 +22,7 @@ public class StartSceneHandler : MonoBehaviour
     public IEnumerator FadoutWait()
     {
         yield return new WaitForSeconds(fadewait);
+        FadeLevelChange.level = "Game";
         FadeLevelChange.fadeOutEnd = true;
     }
 }

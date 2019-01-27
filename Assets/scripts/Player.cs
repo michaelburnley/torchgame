@@ -104,19 +104,19 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            transform.rotation = Quaternion.Euler(0f,0f,90f);
+           
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            transform.rotation = Quaternion.Euler(0f,0f,-90f);
+
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.rotation = Quaternion.Euler(0f,0f,0f);
+
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.rotation = Quaternion.Euler(0f,180f,0f);
+
         }
     }
 }

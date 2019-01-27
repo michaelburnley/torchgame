@@ -75,7 +75,7 @@ public class HouseManager : MonoBehaviour
     {
         if(player.gas_cans == 0) {
             GameOver();
-        } else if {
+        } else {
             completed_days += player.gas_cans;
             party.transform.position = transform.position;
             updateCalendar();

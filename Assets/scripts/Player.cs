@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private Vector3 endPosition;
     private float t;
     private float factor;
+    public int gas_cans;
 
     // Start is called before the first frame update
     void Start()
@@ -87,5 +88,11 @@ public class Player : MonoBehaviour
  
         isMoving = false;
         yield return 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2d collision) {
+        if(collision.tag == "Gas") {
+            gas_cans += 1;
+        }
     }
 }

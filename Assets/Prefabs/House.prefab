@@ -149,10 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27be986adf6794498fca268d804a132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  party: {fileID: 1006575109455390883, guid: 1873c58f2ef4b9a478b21c320a151c9c, type: 3}
+  party: {fileID: 0}
   plrSpawnPoint: {fileID: 1275440951621559753}
   Days: 14
-  fadeWaitTime: 0
+  fadeWaitTime: 3
 --- !u!114 &1275440951515037879
 MonoBehaviour:
   m_ObjectHideFlags: 0

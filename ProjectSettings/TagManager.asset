@@ -8,6 +8,7 @@ TagManager:
   - Party
   - Gas
   - Wall
+  - Monster
   layers:
   - Default
   - TransparentFX

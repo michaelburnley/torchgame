@@ -49,9 +49,10 @@ MonoBehaviour:
   inParty: 0
   nextPartyCount: 0
   prevPartyCount: 0
-  maxTime: 3000
+  maxTime: 10000
   intensity: 10
-  mEndTime: 500
+  mEndTime: 1000
+  mStartTime: 0
 --- !u!212 &6045312167554823695
 SpriteRenderer:
   m_ObjectHideFlags: 0

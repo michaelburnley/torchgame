@@ -99,7 +99,7 @@ MonoBehaviour:
   player: {fileID: 1160260233336030781, guid: 757d3a17b524fc34d9a93dc13944eaea, type: 3}
   Party: {fileID: 1006575109455390883, guid: 1873c58f2ef4b9a478b21c320a151c9c, type: 3}
   orderInLine: 0
-  step: 0.05
+  step: 0.1
   maxDistance: 2
   okToFollow: 0
 --- !u!50 &4008115534279354454

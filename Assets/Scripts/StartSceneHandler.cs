@@ -6,6 +6,7 @@ using UnityEngine;
 public class StartSceneHandler : MonoBehaviour
 {
     public float fadewait;
+    public string scene;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class StartSceneHandler : MonoBehaviour
     public IEnumerator FadoutWait()
     {
         yield return new WaitForSeconds(fadewait);
-        FadeLevelChange.level = "Game";
+        FadeLevelChange.level = scene;
         FadeLevelChange.fadeOutEnd = true;
     }
 }

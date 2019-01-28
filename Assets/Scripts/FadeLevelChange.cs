@@ -15,6 +15,7 @@ public class FadeLevelChange : MonoBehaviour {
 	void Start () {
         fadeIn = false;
         fadeOut = false;
+        fadeOutEnd = false;
         anim = GetComponent<Animator>();
 	}
 	
@@ -25,18 +26,19 @@ public class FadeLevelChange : MonoBehaviour {
         {
             anim.SetBool("FadeIn", true);
             anim.SetBool("FadeOut", false);
-    
+            
         }
         if (fadeOut == true)
         {
             anim.SetBool("FadeOut", true);
             anim.SetBool("FadeIn", false);
-         
+           
         }
         if(fadeOutEnd == true)
         {
             anim.SetBool("FadeOut", true);
             anim.SetBool("FadeIn", false);
+            
             StartCoroutine(LoadLevel());
         }
 		

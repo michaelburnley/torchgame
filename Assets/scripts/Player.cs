@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     };
     private Orientation gridOrientation;
     public bool allowDiagonals = false;
+    public bool failed = false;
     private bool correctDiagonalSpeed = true;
     private Vector2 input;
     private bool isMoving = false;
@@ -21,10 +22,29 @@ public class Player : MonoBehaviour
     private float t;
     private float factor;
     public int gas_cans;
+    private float max_torch_intensity;
+    private float mStartTime;
+    private float mEndTime;
+    private int runs;
+
+    private void Awake()
+    {
+        
+        if (runs > 0)
+        {
+            transform.GetChild(0).GetComponent<Torch>().intensity = max_torch_intensity;
+            transform.GetChild(0).GetComponent<Torch>().mStartTime = Time.time;
+            transform.GetChild(0).GetComponent<Torch>().mEndTime = mEndTime;
+        }
+        runs++;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        max_torch_intensity = transform.GetChild(0).GetComponent<Torch>().intensity;
+        mStartTime = transform.GetChild(0).GetComponent<Torch>().mStartTime;
+        mEndTime = transform.GetChild(0).GetComponent<Torch>().mEndTime;
         gridOrientation = Orientation.Vertical;
         rb = GetComponent<Rigidbody>();
     }
@@ -44,8 +64,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FadeLevelChange.fadeIn = true;
         Rotation();
         ChangeDirection();
+        if(transform.GetChild(0).GetComponent<Torch>().lightToDim.intensity <= 0f )
+        {
+            Debug.Log("failed");
+            failed = true;
+        }
         if (!isMoving) {   
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (!allowDiagonals) {

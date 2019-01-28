@@ -9,32 +9,29 @@ public class FriendBehavior : MonoBehaviour
     public GameObject Party;
     public bool orderInLine;
     public float step;//Set = to players speed;
-    public float maxDistance;
-    
+    public float maxDistance;    
     public bool okToFollow;
+
    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        Party = GameObject.Find("Party");
                
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
         if (okToFollow)
         {
             Transform friendToFollow = transform.parent.transform.GetChild(transform.GetSiblingIndex() - 1);
             
             if (Vector2.Distance(transform.position, friendToFollow.position) >= maxDistance)
             {
-                transform.position = Vector3.MoveTowards(transform.position, friendToFollow.position, step);
+                transform.position = Vector2.MoveTowards(transform.position, friendToFollow.position, step);
             }
 
         }
